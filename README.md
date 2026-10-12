@@ -6,6 +6,29 @@ A collection of **production-ready DevOps & Cloud project templates** designed f
 This repository is a **GitHub Template Repository** — use it to quickly bootstrap real-world DevOps projects with best practices.
 
 ---
+# 🎥 StreamHive - Distributed Video Streaming Platform (YouTube Clone)
+
+> A scalable, YouTube-like video platform built with Next.js 14, Go, HLS streaming, and Polyglot Persistence.
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![Go](https://img.shields.io/badge/Go-1.22-blue)
+![FFmpeg](https://img.shields.io/badge/FFmpeg-HLS-green)
+![Kafka](https://img.shields.io/badge/Kafka-Upstash-orange)
+
+## ⚡ Architecture Overview
+
+```mermaid
+graph TD
+    A[User Upload] --> B[Go Backend - Gin]
+    B --> C[FFmpeg Worker - Goroutine]
+    C --> D[HLS.ts +.m3u8]
+    D --> E[MinIO / AWS S3]
+    E --> F[Kafka Event]
+    F --> G[PostgreSQL + TimescaleDB]
+    F --> H[MongoDB Atlas]
+    H --> I[Next.js 14 Frontend + Video.js]
+
+---
 
 ## 🎯 Purpose
 
